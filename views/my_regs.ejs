@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>My Registrations</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f9;margin:0;}
+.nav{background:#2563eb;color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;}
+.nav a{color:#fff;text-decoration:none;margin-left:15px;}
+.container{max-width:900px;margin:20px auto;padding:0 20px;}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid #eee;}
+th{background:#f1f5f9;}
+</style></head>
+<body>
+<div class="nav"><span>My Registrations</span><div><a href="/events">Events</a><a href="/logout">Logout</a></div></div>
+<div class="container">
+<table>
+<tr><th>Title</th><th>Date</th><th>Venue</th><th>Registered At</th></tr>
+<% regs.forEach(r=>{ %>
+<tr><td><%= r.title %></td><td><%= r.event_date %></td><td><%= r.venue %></td><td><%= r.registered_at %></td></tr>
+<% }) %>
+</table>
+<% if (regs.length===0) { %><p>No registrations yet.</p><% } %>
+</div>
+</body></html>
